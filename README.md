@@ -18,6 +18,10 @@
 
 ### 7. Opcional inicializar o projeto localmente usando Yarn (Instalação e configurações de pacotes)
 
+### 8. Documentação da API com Swagger
+
+### 9. Testando as Rotas com Insomnia
+
 <br></br>
 
 ---
@@ -420,6 +424,65 @@ No backend voçê deve startar o projeto com dev:
 ```sh
 yarn dev
 ```
+
+---
+
+## 8. Documentação da API com Swagger <br></br>
+
+O projeto utiliza o Swagger para fornecer uma documentação interativa e amigável da API. A seguir, estão as instruções para acessar e utilizar a documentação Swagger.
+
+- Após iniciar o servidor, abra um navegador da web e acesse a documentação Swagger usando o seguinte URL:
+
+```sh
+http://localhost:3334/api-docs
+```
+
+- Obtenha um Token: Primeiro, você precisa autenticar-se para obter um token JWT. Utilize o endpoint '/sessions' para autenticar e obter um token , poderá nesse momento utilizar o usario administrador, para fins didático este usuario ja esta cadastrado, podendo em seguida criar outros no endpoint /employee.
+
+```sh
+{
+  "username": "admin",
+  "password": "admin"
+}
+```
+
+- Configure o Token no Swagger UI: No canto superior direito da interface do Swagger, clique no botão "Authorize".Na janela que aparecerá, insira o token JWT no campo Authorization no formato Bearer token. Utilize este IREDES token.
+- Clique em "Authorize" para aplicar o token a todas as requisições.
+- Realize Requisições Autenticadas
+
+  Com o token JWT configurado, você poderá acessar os endpoints que exigem autenticação. Todos os endpoints protegidos na documentação Swagger exigem que o token seja incluído no cabeçalho da solicitação.
+
+---
+
+## 9. Testando as Rotas com Insomnia
+
+    Este projeto utiliza Insomnia para testar as rotas da API. A seguir estão as instruções para configurar e executar testes de API utilizando Insomnia.
+
+- Baixe e Instale o Insomnia
+
+  Visite a página de downloads do Insomnia e baixe a versão adequada para seu sistema operacional. Siga as instruções de instalação para configurar o Insomnia em sua máquina.
+
+  ```sh
+  https://insomnia.rest/download
+  ```
+
+- Configurando o Insomnia
+
+  Importando o Arquivo de Configuração: Clique no ícone de Importar/Exportar na parte superior esquerda da tela;
+  Selecione a opção Importar Dados;
+  Navegue até o caminho do arquivo de configuração localizado na raiz do projeto:
+
+  ```sh
+  ex:../backend/Insomnia/rotas_produtos_2024-08-23.json
+  ```
+
+- Visualize e Execute as Requisições:
+
+  Após a importação, você verá todas as rotas e configurações disponíveis no Insomnia;
+
+  Selecione a rota que deseja testar e ajuste os parâmetros conforme necessário;
+
+  Execute as requisições para verificar o funcionamento das APIs;
 
 ---
 

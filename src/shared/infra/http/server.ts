@@ -3,6 +3,10 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import swaggerUi from 'swagger-ui-express';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import YAML from 'yamljs';
 import AppError from '@shared/errors/AppError';
 import routes from './routes';
 import '@shared/container';
@@ -13,6 +17,14 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3333;
+
+// Carregar o arquivo Swagger YAML
+const swaggerDocument = YAML.load(
+  '/home/icts/Documentos/desafio_iredes/backend/doc-api-swagger.yaml'
+);
+
+// Configuração do Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.json());
 app.use(cors());
