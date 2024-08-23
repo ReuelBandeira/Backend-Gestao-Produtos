@@ -432,5 +432,3 @@ yarn dev
 # Comando git para atualizar projeto
 
 - git pull
-
-![Teste Imagem](src/uploads/1724449805380-testeImagem.png)
