@@ -157,25 +157,27 @@ Seguindo um pouco do conceito de DDD e SOLID
 
   - Verificar se o Node.js e NPM estão instalados.<br/>
     Quando instalamos o Node.js o gerenciador de pacotes NPM também é instalado, para confirmar a instalação do Node.js e NPM abra o terminal de comando do Ubuntu e execute os comandos abaixo <br/><br/>
+
     ```sh
     node --version
     ```
+
     ou
 
-```sh
-npm --version
-```
+    ```sh
+    npm --version
+    ```
 
-se a instalação estiver correta a resposta do terminal deve conter algo assim.
+  se a instalação estiver correta a resposta do terminal deve conter algo assim.
 
-```sh
-  $ node --version
-  v16.13.1
-```
+  ```sh
+    $ node --version
+    v16.13.1
+  ```
 
-```sh
-$ npm --version
-```
+  ```sh
+  $ npm --version
+  ```
 
 - ✔️ Instalar Yarn versão 1.22.17 LTS (ou versão superior LTS)
 
