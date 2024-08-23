@@ -162,20 +162,20 @@ node --version
 `
     ou
 
-            ```sh
-             npm --version
-            ```
+          ```sh
+          npm --version
+          ```
 
-            se a instalação estiver correta a resposta do terminal deve conter algo assim.
+          se a instalação estiver correta a resposta do terminal deve conter algo assim.
 
-            `sh
-            $ node --version
-            v16.13.1
-            `
-            `sh
-            $ npm --version
-            8.1.2
-            `
+          ```sh
+          $ node --version
+          v16.13.1
+          ```
+
+         ```sh
+         $ npm --version
+         ```
 
 - ✔️ Instalar Yarn versão 1.22.17 LTS (ou versão superior LTS)
 
