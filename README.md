@@ -177,6 +177,7 @@ Seguindo um pouco do conceito de DDD e SOLID
 
   ```sh
   $ npm --version
+  v10.8.1
   ```
 
 - ✔️ Instalar Yarn versão 1.22.17 LTS (ou versão superior LTS)
