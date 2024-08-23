@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+db-docker
+.env
+
+# Ignorar o diretório tmp exceto os arquivos .gitkeep e a pasta uploads
+tmp/*
+!tmp/.gitkeep
+!tmp/uploads/
+tmp/uploads/*
+
+
+!docker-compose.yml
+!Dockerfile
+!docker/**/*
