@@ -1,7 +1,9 @@
 import {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   Column,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   CreateDateColumn,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   DeleteDateColumn,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   Entity,
@@ -10,7 +12,7 @@ import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   UpdateDateColumn,
 } from 'typeorm';
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-unused-vars
 import { IsEmail, Length } from 'class-validator';
 
 @Entity('employees')

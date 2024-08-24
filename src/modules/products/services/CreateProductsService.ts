@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
+import { validate } from 'class-validator';
 import Product from '../infra/typeorm/entities/Products';
 import IProductRepository from '../repositories/IProductsRepository';
 
@@ -29,6 +30,26 @@ export default class CreateProductService {
     image,
     categoryId,
   }: IRequest): Promise<Product> {
+    const product = new Product();
+    product.name = name;
+    product.description = description;
+
+    // Validação da entidade
+    const errors = await validate(product);
+    if (errors.length > 0) {
+      // Formate os erros para uma mensagem compreensível
+      const errorMessages = errors
+        .map((err) => {
+          // Use o operador de coalescência nula para garantir que constraints não seja undefined
+          const constraints = err.constraints || {};
+          return Object.values(constraints);
+        })
+        .flat()
+        .join(', ');
+
+      throw new AppError(`Validation failed: ${errorMessages}`, 400);
+    }
+
     const checkProductExist = await this.productsRepository.findByName(name);
 
     if (checkProductExist) {

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line no-shadow
 
+import { Length } from 'class-validator';
 import {
   Column,
   CreateDateColumn,
@@ -15,7 +16,8 @@ export default class Category {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ length: 100 })
+  @Length(1, 100, { message: 'O nome deve ter no máximo 100 caracteres.' })
   name: string;
 
   @CreateDateColumn()

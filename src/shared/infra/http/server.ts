@@ -39,7 +39,6 @@ app.use(
   express.static(path.resolve(__dirname, '../../../../uploads'))
 );
 
-// Se você ainda precisar do diretório 'public', pode manter isso também
 app.use(
   '/public',
   express.static(path.resolve(__dirname, '../../../../public'))

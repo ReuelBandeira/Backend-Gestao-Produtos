@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line no-shadow
 import Category from '@modules/categorys/infra/typeorm/entities/Category';
+import { Length } from 'class-validator';
 import {
   Column,
   CreateDateColumn,
@@ -22,10 +23,12 @@ export default class Product {
   @ManyToOne(() => Category, (categorys) => categorys.id)
   category: Category;
 
-  @Column()
+  @Column({ length: 50 })
+  @Length(1, 50, { message: 'O nome deve ter no máximo 50 caracteres.' })
   name: string;
 
-  @Column()
+  @Column({ length: 200 })
+  @Length(1, 200, { message: 'A descrição deve ter no máximo 200 caracteres.' })
   description: string;
 
   @Column()
