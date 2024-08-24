@@ -105,7 +105,7 @@ Seguindo um pouco do conceito de DDD e SOLID
 - 📦 src
   - 📂 config: Arquivos de configuração
   - 📂 modules: Camada das Entidades da aplicação
-    - 📂 NOME_DA_ENTIDADE: Referência o nome do modulo desenvolvido
+    - 📂 NOME_DA_ENTIDADE: Referência o nome do módulo desenvolvido
       - 📂 dtos: Modelos do projeto
       - 📂 infra: Camada da aplicação em que usa diretamente alguma Tecnologia ou Protocolo
         - 📂 http: Camada responsável pelo protocolo HTTP
@@ -309,7 +309,7 @@ Substitua URL_DO_REPOSITORIO pela URL do repositório que você deseja clonar. V
 seu comando é pra ficar parecido com este:
 
 ```sh
-git clone https://github.com/ReuelBandeira/Modelo-Backend-Projetos.git
+git clone https://github.com/ReuelBandeira/Backend-Gestao-Produtos.git
 ```
 
 Adicione usuário e senha do git para clonar o repositório.
@@ -407,7 +407,7 @@ ou renomeie e salve o arquivo que se encontra na raiz 'env-exemple' para '.env' 
 
 Antes de inicializar o projeto você precisará rodar as migrations, elas irão configurar as tabelas do seu banco.
 
-execute o comando abaixo para rodar as migrations ainda no seu diretório backend/
+execute o comando abaixo para rodar as migrations ainda no seu diretório backend
 
 ```sh
 yarn typeorm migration:run
