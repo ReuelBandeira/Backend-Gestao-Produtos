@@ -1,4 +1,4 @@
-FROM node
+FROM node:latest
 WORKDIR /usr/src/app
 
 # Copiar o código para o contêiner
