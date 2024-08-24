@@ -1,7 +1,7 @@
+import { Length, validate } from 'class-validator';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
-import { validate } from 'class-validator';
 import Product from '../infra/typeorm/entities/Products';
 import IProductRepository from '../repositories/IProductsRepository';
 
@@ -50,9 +50,12 @@ export default class CreateProductService {
       throw new AppError(`Validation failed: ${errorMessages}`, 400);
     }
 
-    const checkProductExist = await this.productsRepository.findByName(name);
+    const checkProductExist = await this.productsRepository.findByName(
+      name,
+      description
+    );
 
-    if (checkProductExist) {
+    if (checkProductExist.length !== 0) {
       throw new AppError(`Esse produto já existe`);
     }
 

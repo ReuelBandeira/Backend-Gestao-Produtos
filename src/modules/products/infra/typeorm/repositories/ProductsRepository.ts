@@ -20,9 +20,12 @@ export default class ProductRepository implements IProductRepository {
     return products;
   }
 
-  public async findByName(name: string): Promise<Product | undefined> {
-    const products = await this.ormRepository.findOne({
-      where: { name },
+  public async findByName(
+    name: string,
+    description: string
+  ): Promise<Product[]> {
+    const products = await this.ormRepository.find({
+      where: { name, description },
     });
 
     return products;

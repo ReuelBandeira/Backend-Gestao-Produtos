@@ -7,7 +7,7 @@ export default interface IProductRepository {
     name: string,
     description: string
   ): Promise<(Product | undefined)[] | undefined>;
-  findByName(name: string): Promise<Product | undefined>;
+  findByName(name: string, description: string): Promise<Product[]>;
   findAllProduct(): Promise<Product | Product[]>;
   create(data: ICreateProductDTO): Promise<Product>;
   update(products: Product): Promise<Product>;
