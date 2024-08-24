@@ -16,7 +16,7 @@ services:
       DB_NAME: ${DB_NAME}
     volumes:
       - .:/usr/src/app
-    command: sh -c "until nc -z db 3306; do sleep 1; done && yarn typeorm migration:run && yarn dev"
+    command: sh -c "until nc -z db 3306; do sleep 1; done && yarn install && yarn typeorm migration:run && yarn dev"
     depends_on:
       - db
     networks:
