@@ -86,4 +86,12 @@ export default class ProductRepository implements IProductRepository {
     });
     return products;
   }
+
+  public async findByCategory(categoryId: number): Promise<Product[]> {
+    const products = await this.ormRepository.find({
+      where: { categoryId },
+    });
+
+    return products;
+  }
 }

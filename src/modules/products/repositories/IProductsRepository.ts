@@ -12,4 +12,5 @@ export default interface IProductRepository {
   create(data: ICreateProductDTO): Promise<Product>;
   update(products: Product): Promise<Product>;
   delete(id: number): Promise<void>;
+  findByCategory(categoryId: number): Promise<Product[]>;
 }
