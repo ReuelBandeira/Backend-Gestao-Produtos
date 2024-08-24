@@ -24,11 +24,15 @@ export default class Product {
   category: Category;
 
   @Column({ length: 50 })
-  @Length(1, 50, { message: 'O nome deve ter no máximo 50 caracteres.' })
+  @Length(1, 50, {
+    message: 'O nome deve ter no minimo 1 no máximo 50 caracteres.',
+  })
   name: string;
 
   @Column({ length: 200 })
-  @Length(1, 200, { message: 'A descrição deve ter no máximo 200 caracteres.' })
+  @Length(1, 200, {
+    message: 'A descrição deve ter no minimo 1 no máximo 200 caracteres.',
+  })
   description: string;
 
   @Column()

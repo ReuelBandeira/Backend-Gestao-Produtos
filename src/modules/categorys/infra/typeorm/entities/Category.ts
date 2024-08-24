@@ -17,7 +17,9 @@ export default class Category {
   id: number;
 
   @Column({ length: 100 })
-  @Length(1, 100, { message: 'O nome deve ter no máximo 100 caracteres.' })
+  @Length(1, 100, {
+    message: 'O nome deve ter no minimo 1 e no máximo 100 caracteres.',
+  })
   name: string;
 
   @CreateDateColumn()
