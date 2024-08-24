@@ -8,6 +8,7 @@ import swaggerUi from 'swagger-ui-express';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import YAML from 'yamljs';
 import AppError from '@shared/errors/AppError';
+import path from 'path';
 import routes from './routes';
 import '@shared/container';
 
@@ -18,10 +19,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3333;
 
-// Carregar o arquivo Swagger YAML
-const swaggerDocument = YAML.load(
-  '/home/icts/Documentos/desafio_iredes/backend/doc-api-swagger.yaml'
+// Construir o caminho para o arquivo Swagger YAML
+const swaggerFilePath = path.resolve(
+  __dirname,
+  '../../../../doc-api-swagger.yaml'
 );
+const swaggerDocument = YAML.load(swaggerFilePath);
 
 // Configuração do Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
@@ -31,10 +34,16 @@ app.use(cors());
 app.use(routes);
 
 // Configuração para servir arquivos estáticos do diretório 'uploads'
-app.use('/uploads', express.static(`${__dirname}/uploads`));
+app.use(
+  '/uploads',
+  express.static(path.resolve(__dirname, '../../../../uploads'))
+);
 
 // Se você ainda precisar do diretório 'public', pode manter isso também
-app.use('/public', express.static(`${__dirname}/public`));
+app.use(
+  '/public',
+  express.static(path.resolve(__dirname, '../../../../public'))
+);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: Error, req: Request, res: Response, _: NextFunction) => {
