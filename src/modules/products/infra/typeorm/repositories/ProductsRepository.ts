@@ -36,6 +36,7 @@ export default class ProductRepository implements IProductRepository {
     description: string
   ): Promise<Product[] | undefined> {
     const products = await this.ormRepository.find({
+      relations: ['category'],
       where: {
         name: Like(`%${name}%`),
         description: Like(`%${description}%`),
