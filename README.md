@@ -6,21 +6,23 @@
 
 <br></br>
 
-### 1. Tecnologias
+### Sumário
 
-### 2. Estrutura de pastas Backend
+#### 1. Tecnologias
 
-### 4. Pré-requisitos
+#### 2. Estrutura de pastas Backend
 
-### 5. Clonar o Projeto para o ambiente local
+#### 4. Pré-requisitos
 
-### 6. Inicializar o projeto Utilizando docker e docker compose
+#### 5. Clonar o Projeto para o ambiente local
 
-### 7. Opcional inicializar o projeto localmente usando Yarn (Instalação e configurações de pacotes)
+#### 6. Inicializar o projeto Utilizando docker e docker compose
 
-### 8. Documentação da API com Swagger
+#### 7. Opcional inicializar o projeto localmente usando Yarn (Instalação e configurações de pacotes)
 
-### 9. Testando as Rotas com Insomnia
+#### 8. Documentação da API com Swagger
+
+#### 9. Testando as Rotas com Insomnia
 
 <br></br>
 
@@ -103,15 +105,15 @@ Seguindo um pouco do conceito de DDD e SOLID
 - 📦 src
   - 📂 config: Arquivos de configuração
   - 📂 modules: Camada das Entidades da aplicação
-    - 📂 NOME_DA_ENTIDADE: Tudo que estiver
+    - 📂 NOME_DA_ENTIDADE: Referência o nome do modulo desenvolvido
       - 📂 dtos: Modelos do projeto
       - 📂 infra: Camada da aplicação em que usa diretamente alguma Tecnologia ou Protocolo
         - 📂 http: Camada responsável pelo protocolo HTTP
           - 📂 controllers: Camada responsável pelo Controller da entidade usando as funções definidas pelo REST
           - 📂 routes: Camada responsável por definir as rotas da entidade
         - 📂 typeorm: Camada responsável pelo TypeOrm
-          - 📂 entities: Camada responsável por definir a entidade com
-          - 📂 respositories: Camada reponsável por implementar
+          - 📂 entities: Camada responsável por definir a entidade
+          - 📂 respositories: Camada reponsável pela implementação
       - 📂 repositories: Camada reponsável por definir a estrutura do repositório
       - 📂 providers(opcional): Camada responsável por definir um serviço próprio da entidade
         - 📂 implementations: Camada responsável por implementar através da tecnologia/serviço
@@ -134,15 +136,37 @@ Seguindo um pouco do conceito de DDD e SOLID
 
 ## 4. Pré-requisitos <br></br>
 
-- ✔️ Sistema operacional Linux instalado - Ubuntu 20.04
+- Sistema operacional Linux instalado - Ubuntu 20.04
 
-  - https://ubuntu.com/download/desktop <br/><br/>
+- https://ubuntu.com/download/desktop <br/><br/>
 
-- ✔️ Instalar VS CODE para visualizar os projetos
+- ️ Instalar VS CODE para visualizar os projetos
 
   - https://code.visualstudio.com/Download <br/><br/>
 
-- ✔️ Instalar Node versão 16.13.1 LTS (ou versão superior LTS)
+- Instalar a versão Git 2.25.1 LTS (ou superior LTS)
+
+- https://git-scm.com/download/linux
+
+  ou instale via linha de comando no terminal de Ubuntu
+
+  ```sh
+  $ sudo apt update
+  $ sudo apt install git-all
+  ```
+
+  Após a instalação, você pode acessar o Git a partir do Terminal.
+  Para verificar se a instalação foi bem-sucedida, abra um novo terminal e digite:
+
+  ```sh
+  git --version
+  ```
+
+  Você deverá ver a versão do Git instalada no seu sistema.
+
+OBS:Caso utilize o docker e docker composse, passar para o item de número 6 ( Inicializar o projeto Utilizando docker e docker compose)
+
+- ️ Instalar Node versão 16.13.1 LTS (ou versão superior LTS)
 
   - https://nodejs.org/en/download/ <br/><br/>
 
@@ -184,7 +208,7 @@ Seguindo um pouco do conceito de DDD e SOLID
   v10.8.1
   ```
 
-- ✔️ Instalar Yarn versão 1.22.17 LTS (ou versão superior LTS)
+- ️ Instalar Yarn versão 1.22.17 LTS (ou versão superior LTS)
 
   - https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
 
@@ -192,27 +216,7 @@ Seguindo um pouco do conceito de DDD e SOLID
     $ sudo npm install --global yarn
     ```
 
-- ✔️ Instalar a versão Git 2.25.1 LTS (ou superior LTS)
-
-  - https://git-scm.com/download/linux
-
-    ou instale via linha de comando no terminal de Ubuntu
-
-    ```sh
-    $ sudo apt update
-    $ sudo apt install git-all
-    ```
-
-    Após a instalação, você pode acessar o Git a partir do Terminal.
-    Para verificar se a instalação foi bem-sucedida, abra um novo terminal e digite:
-
-    ```sh
-    git --version
-    ```
-
-    Você deverá ver a versão do Git instalada no seu sistema.
-
-- ✔️ Instalar o Banco de Dados do MySQL Server no Ubunto:
+- ️ Instalar o Banco de Dados do MySQL Server no Ubuntu:
 
   - Atualize a lista de pacotes:
 
@@ -343,12 +347,6 @@ Adicione usuário e senha do git para clonar o repositório.
   docker-compose up -d
   ```
 
-- Ou caso deseje fazer ambos ao mesmo tempo:
-
-  ```sh
-  docker-compose up --build -d
-  ```
-
   Se tudo ocorreu bem o projeto já esta estartado com sucesso. Ao visualizar o log do container 'backend_app', no terminal terá essa informação :Api running 🚀 on port 3334
 
 - OBS:Se você está enfrentando problemas relacionados ao cache no Docker,pode utilizar esse comando para limpeza e refazer o passo anterior:
@@ -456,7 +454,7 @@ http://localhost:3334/api-docs
 
 ## 9. Testando as Rotas com Insomnia
 
-    Este projeto utiliza Insomnia para testar as rotas da API. A seguir estão as instruções para configurar e executar testes de API utilizando Insomnia.
+Este projeto utiliza Insomnia para testar as rotas da API. A seguir estão as instruções para configurar e executar testes de API utilizando Insomnia.
 
 - Baixe e Instale o Insomnia
 
