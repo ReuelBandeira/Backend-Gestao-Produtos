@@ -1,15 +1,17 @@
+# Ignorar node_modules e arquivos de sistema
 node_modules
 .DS_Store
+
+# Ignorar db-docker e arquivos de variáveis de ambiente
 db-docker
 .env
 
-# Ignorar o diretório tmp exceto os arquivos .gitkeep e a pasta uploads
+# Ignorar tmp e arquivos temporários
 tmp/*
 !tmp/.gitkeep
 !tmp/uploads/
-tmp/uploads/*
+!tmp/uploads/**
 
-
-!docker-compose.yml
-!Dockerfile
-!docker/**/*
+# Garantir que src/uploads não seja ignorado
+!src/uploads/
+!src/uploads/**
